@@ -1,0 +1,42 @@
+<div class="meta-qnuploader-wrapper">
+    <div class="meta-qnuploader-head">
+        <div class="uploader-button-wrapper">
+            <button id="pickfiles" class="uploader-button">上传</button>
+        </div>
+        <div class="message-wrapper">
+            <div class="message" ng-bind-html="message"></div>
+        </div>
+        <div class="loading-wrapper" ng-class="{'show': uploading}">
+            <div class="loading glyphicon glyphicon-repeat"></div>
+        </div>
+    </div>
+    <div class="meta-qnuploader-body">
+        <div id="container">
+            <table class="files-list-table">
+                <tr>
+                    <th style="width:10%">#</th>
+                    <th style="width:40%">文件名</th>
+                    <th style="width:20%">大小</th>
+                    <th style="width:30%">
+                        详情
+                    </th>
+                </tr>
+                <tr ng-repeat="(key,file) in uploaderDatas">
+                    <td ng-bind="key"></td>
+                    <td ng-bind="file.name"></td>
+                    <td ng-bind="((file.size)/1024/1024).toFixed(4) + 'MB'"></td>
+                    <td>
+                        <a ng-href="{{file.link + '?download/' + file.name}}" target="_blank">下载</a>
+                        <a href="javascript:void(0)" ng-click="delete(key)">删除</a>
+                    </td>
+                </tr>
+            </table>
+            <div class="drag-place">
+                +
+            </div>
+        </div>
+    </div>
+    <div class="meta-qnuploader-foot">
+        单个文件大小不能大于<span ng-bind="uploaderConfig.maxSize"></span>
+    </div>
+</div>

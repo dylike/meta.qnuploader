@@ -1,0 +1,74 @@
+.meta-qnuploader {
+    .show {
+        display: block;
+    }
+    .meta-qnuploader-wrapper {
+        .meta-qnuploader-head {
+            position: relative;
+            margin: 5px 0 5px 0;
+            .loading-wrapper {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 5px;
+            }
+
+            .uploader-button-wrapper {
+                float: left;
+            }
+
+            .message-wrapper {
+                float: left;
+                margin: 0 20px;
+            }
+        }
+        .meta-qnuploader-body {
+            .drag-place {
+                margin: auto;
+                height: 100px;
+                border: 1px dashed #999;
+
+                text-align: center;
+                line-height: 100px;
+                color: #ccc;
+                font-size: 100px;
+            }
+            .files-list-table {
+                width: 100%;
+                tr {
+                    line-height: 22px;
+                }
+            }
+        }
+        .meta-qnuploader-foot {
+            color: #999;
+            text-align: right;
+            font-size: .9em;
+        }
+        .loading {
+            animation: meta-qnuploader-loading 1s linear infinite;
+        }
+        .uploader-button {
+            width: 100px;
+            border-radius: 2px;
+        }
+    }
+}
+
+@keyframes meta-qnuploader-loading {
+    from {
+        -ms-transform: rotate(0deg); /* IE 9 */
+        -moz-transform: rotate(0deg); /* Firefox */
+        -webkit-transform: rotate(0deg); /* Safari 和 Chrome */
+        -o-transform: rotate(0deg); /* Opera */
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg); /* IE 9 */
+        -moz-transform: rotate(360deg); /* Firefox */
+        -webkit-transform: rotate(360deg); /* Safari 和 Chrome */
+        -o-transform: rotate(360deg); /* Opera */
+        transform: rotate(360deg);
+    }
+}
