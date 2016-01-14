@@ -1,11 +1,10 @@
 # metaqnuploader
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.15.1.
+[Demo](http://dylike.github.io/meta.qnuploader)
 
 ## 依赖
 
-qiniu.js 和 plupload.js
+[qiniu.js](http://developer.qiniu.com/docs/v6/sdk/javascript-sdk.html) 和 [plupload.js](http://www.plupload.com/)
 
 ## 下载安装
 
