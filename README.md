@@ -8,7 +8,7 @@
 
 ## 下载安装
 
-bower install meta.qnuploader
+`bower install meta.qnuploader`
 
 ## 使用
 

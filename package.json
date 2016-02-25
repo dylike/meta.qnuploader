@@ -1,5 +1,5 @@
 {
-  "name": "metaqnuploader",
+  "name": "meta-qnuploader",
   "private": true,
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
