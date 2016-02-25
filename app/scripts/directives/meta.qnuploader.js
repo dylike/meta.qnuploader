@@ -15,8 +15,10 @@ controller('metaQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce) {
 
     //删除其中的元素
     $scope.delete = function (index) {
-        $scope.uploaderDatas.splice(index, 1);
-        $scope.success('删除成功');
+        if (confirm('是否确认删除?')) {
+            $scope.uploaderDatas.splice(index, 1);
+            $scope.success('删除成功');
+        }
     };
 
     //显示失败信息
