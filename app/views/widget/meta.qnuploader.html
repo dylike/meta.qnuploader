@@ -14,17 +14,32 @@
         <div id="container">
             <table class="files-list-table">
                 <tr>
-                    <th style="width:10%">#</th>
+                    <th style="width:10%">序号</th>
                     <th style="width:40%">文件名</th>
-                    <th style="width:20%">大小</th>
+                    <th style="width:20%">缩略图
+                        <small>点击预览</small>
+                    </th>
                     <th style="width:30%">
                         详情
                     </th>
                 </tr>
+                <!--<tr>-->
+                <!--<td colspan="4" style="text-align: center">-->
+                <!--暂无附件-->
+                <!--</td>-->
+                <!--</tr>-->
                 <tr ng-repeat="(key,file) in uploaderDatas">
-                    <td ng-bind="key"></td>
+                    <td ng-bind="key + 1"></td>
                     <td ng-bind="file.name"></td>
-                    <td ng-bind="((file.size)/1024/1024).toFixed(4) + 'MB'"></td>
+                    <!--<td ng-bind="((file.size)/1024/1024).toFixed(4) + 'MB'"></td>-->
+                    <td class="glyphicon glyphicon-file" style="font-size: 28px;color:#ddd"
+                        ng-if="file.type.indexOf('image')===-1"></td>
+                    <td style="font-size: 28px;color:#ddd"
+                        ng-if="file.type.indexOf('image')!==-1">
+                        <a ng-href="{{file.link}}" target="_blank">
+                            <img ng-src="{{file.link}}" width="36px" height="36px"/>
+                        </a>
+                    </td>
                     <td>
                         <a ng-href="{{file.link + '?download/' + file.name}}" target="_blank">下载</a>
                         <a href="javascript:void(0)" ng-click="delete(key)">删除</a>

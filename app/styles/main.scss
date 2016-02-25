@@ -25,7 +25,7 @@
         }
         .meta-qnuploader-body {
             .drag-place {
-                margin: auto;
+                margin: 10px auto;
                 height: 100px;
                 border: 1px dashed #999;
 
@@ -36,8 +36,18 @@
             }
             .files-list-table {
                 width: 100%;
+                th:last-child {
+                    text-align: right;
+                }
                 tr {
-                    line-height: 22px;
+                    line-height: 36px;
+                }
+                td:last-child {
+                    text-align: right;
+                }
+                small {
+                    font-weight: 300;
+                    color: #999;
                 }
             }
         }

@@ -37,8 +37,9 @@ angular
 
     $rootScope.config = {
         domain: 'http://7xixj1.com1.z0.glb.clouddn.com/',
-        uptokenUrl: '_ATGryARBwpe-DEONUbpzef-OkKQXhWXulwgbp2V:r0ghxbW6nb_jc6oklZF62zPnPFU=:eyJzY29wZSI6Im1ldGFsYWItdGVzdCIsImRlYWRsaW5lIjoxNDUyNjkxNzA2fQ==',
-        max_size: '5M'
+        uptokenUrl: 'http://test.metalab.cn:3000/upload/token?bucket=metalab-test',
+        //uptokenUrl: 'http://api.metalab.cn:3003/upload/token',
+        maxSize: '1M'
     };
 
 }]);
