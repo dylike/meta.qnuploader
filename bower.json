@@ -1,29 +1,27 @@
 {
-    "name": "metaqnuploader",
-    "version": "0.0.1",
-    "dependencies": {
-        "angular": "^1.4.0",
-        "bootstrap": "^3.2.0",
-        "angular-animate": "^1.4.0"
-    },
-    "main": [
-        "dist/lib/plupload-2.1.8/js/moxie.min.js",
-        "dist/lib/plupload-2.1.8/js/plupload.min.js",
-        "dist/lib/js-sdk-master/src/qiniu.min.js",
-        "dist/scripts/meta.qnuploader.min.js",
-        "dist/styles/meta.qnuploader.min.css"
-    ],
-    "devDependencies": {
-    },
-    "appPath": "app",
-    "moduleName": "metaqnuploader",
-    "overrides": {
-        "bootstrap": {
-            "main": [
-                "less/bootstrap.less",
-                "dist/css/bootstrap.css",
-                "dist/js/bootstrap.js"
-            ]
-        }
+  "name": "meta-qnuploader",
+  "version": "0.0.1",
+  "dependencies": {},
+  "main": [
+    "dist/lib/plupload-2.1.8/js/moxie.min.js",
+    "dist/lib/plupload-2.1.8/js/plupload.min.js",
+    "dist/lib/js-sdk-master/src/qiniu.min.js",
+    "dist/scripts/meta.qnuploader.min.js",
+    "dist/styles/meta.qnuploader.min.css"
+  ],
+  "devDependencies": {
+    "angular": "^1.4.0",
+    "bootstrap": "~3.3.6"
+  },
+  "appPath": "app",
+  "moduleName": "meta-qnuploader",
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
     }
+  }
 }
