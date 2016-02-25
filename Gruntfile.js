@@ -376,7 +376,7 @@ module.exports = function (grunt) {
         ngtemplates: {
             dist: {
                 options: {
-                    module: 'meta.uploader',
+                    module: 'meta.qnuploader',
                     htmlmin: '<%= htmlmin.dist.options %>',
                     usemin: 'scripts/meta.qnuploader.js'
                 },
