@@ -19,6 +19,15 @@
 <script src="path/to/meta.qnuploader.js"></script>
 ```
 
+```javascript
+angular.module('yourapp', [... , 'meta.qnuploader'])
+```
+
+```
+<meta-multiple-qnuploader class="meta-qnuploader meta-multiple-qnuploader"></meta-multiple-qnuploader>
+<meta-single-qnuploader class="meta-qnuploader meta-single-qnuploader"></meta-single-qnuploader>
+```
+
 ## 本地运行，进一步加工
 
 `grunt serve`
