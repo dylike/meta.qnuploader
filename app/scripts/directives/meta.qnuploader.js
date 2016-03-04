@@ -10,6 +10,7 @@
  */
 angular.module('meta.qnuploader', []).
 controller('metaMultipleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce) {
+    $scope.uploading = false;
 
     //下载全部
 
@@ -37,24 +38,27 @@ controller('metaMultipleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $s
     //停止动画
     $scope.stop = function () {
         $scope.uploading = false;
-        $scope.$digest();
+        $scope.$apply();
     };
 
     //开始动画
     $scope.start = function () {
         $scope.uploading = true;
-        $scope.$digest();
+        $scope.$apply();
     };
 }]).
 controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce) {
+
+    $scope.uploading = false;
+
     $scope.start = function () {
         $scope.uploading = true;
-        $scope.$digest();
+        $scope.$apply();
     };
 
     $scope.stop = function () {
         $scope.uploading = false;
-        $scope.$digest();
+        $scope.$apply();
     };
     //显示失败信息
     $scope.error = function (msg) {
