@@ -49,9 +49,30 @@
 <!--</div>-->
 
 <div class="container">
-    <div ng-view="">
-        <meta-qnuploader class="meta-qnuploader" uploader-datas="files" uploader-config="config">
-        </meta-qnuploader>
+    <h1>
+        Multiple Uploader
+    </h1>
+    <meta-multiple-qnuploader class="meta-qnuploader meta-multiple-qnuploader" uploader-datas="files"
+                              uploader-config="config">
+    </meta-multiple-qnuploader>
+    <div ng-repeat="file in files">
+        <span ng-bind="file.name"></span>
+        <span ng-bind="file.size"></span>
+        <span ng-bind="file.link"></span>
+    </div>
+</div>
+
+<div class="container">
+    <h1>
+        Single Uploader
+    </h1>
+    <meta-single-qnuploader class="meta-qnuploader meta-single-qnuploader" uploader-data="data"
+                            uploader-config="config">
+    </meta-single-qnuploader>
+    <div>
+        <span ng-bind="data.name"></span>
+        <span ng-bind="data.size"></span>
+        <span ng-bind="data.link"></span>
     </div>
 </div>
 

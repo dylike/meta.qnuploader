@@ -35,6 +35,12 @@ angular
         size: '2'
     }];
 
+    //$rootScope.data = {
+    //    name: '1',
+    //    link: '2',
+    //    size: '3'
+    //};
+
     $rootScope.config = {
         domain: 'http://7xixj1.com1.z0.glb.clouddn.com/',
         uptokenUrl: 'http://test.metalab.cn:3000/upload/token?bucket=metalab-test',
