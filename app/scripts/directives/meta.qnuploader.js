@@ -62,15 +62,15 @@ controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce
     };
     //显示失败信息
     $scope.error = function (msg) {
+        $scope.stop();
         $scope.message = $sce.trustAsHtml('<span style="color:red">' + msg + '</span>');
         console.error(msg);
-        $scope.stop();
     };
 
     //显示成功信息
     $scope.success = function (msg) {
-        $scope.message = $sce.trustAsHtml('<span style="color:green">' + msg + '</span>');
         $scope.stop();
+        $scope.message = $sce.trustAsHtml('<span style="color:green">' + msg + '</span>');
     };
 }]).
 directive("metaMultipleQnuploader", function () {
