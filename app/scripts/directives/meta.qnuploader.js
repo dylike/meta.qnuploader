@@ -22,6 +22,10 @@ controller('metaMultipleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $s
         }
     };
 
+    $scope.clear = function () {
+        $scope.message = $sce.trustAsHtml('');
+    };
+
     //显示失败信息
     $scope.error = function (msg) {
         $scope.message = $sce.trustAsHtml('<span style="color:red">' + msg + '</span>');
@@ -43,6 +47,7 @@ controller('metaMultipleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $s
 
     //开始动画
     $scope.start = function () {
+        $scope.clear();
         $scope.uploading = true;
         $scope.$apply();
     };
@@ -52,6 +57,7 @@ controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce
     $scope.uploading = false;
 
     $scope.start = function () {
+        $scope.clear();
         $scope.uploading = true;
         $scope.$apply();
     };
@@ -60,17 +66,22 @@ controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce
         $scope.uploading = false;
         $scope.$apply();
     };
+
+    $scope.clear = function () {
+        $scope.message = $sce.trustAsHtml('');
+    };
+
     //显示失败信息
     $scope.error = function (msg) {
-        $scope.stop();
         $scope.message = $sce.trustAsHtml('<span style="color:red">' + msg + '</span>');
+        $scope.stop();
         console.error(msg);
     };
 
     //显示成功信息
     $scope.success = function (msg) {
-        $scope.stop();
         $scope.message = $sce.trustAsHtml('<span style="color:green">' + msg + '</span>');
+        $scope.stop();
     };
 }]).
 directive("metaMultipleQnuploader", function () {
@@ -201,7 +212,6 @@ directive("metaMultipleQnuploader", function () {
                             res.type = file.type;
                             console.log(res);
                             scope.uploaderDatas.push(res);
-                            scope.$apply();
                             //触发上传成功的回调
                             scope.success(file.name + '上传成功!');
                         },
@@ -373,7 +383,6 @@ directive("metaSingleQnuploader", function () {
                             res.name = file.name;
                             res.size = file.size;
                             res.type = file.type;
-                            console.log(res);
                             scope.uploaderData = (res);
                             //触发上传成功的回调
                             scope.success('上传成功');
