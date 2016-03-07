@@ -2,16 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name metaqnuploaderApp
+ * @name metaqnuploader
  * @description
- * # metaqnuploaderApp
+ * # metaqnuploader
  *
  * Main module of the application.
  */
 angular
-    .module('metaqnuploaderApp', [
-        'meta.qnuploader'
-    ])
+    .module('metaqnuploaderApp', ['meta.qnuploader'])
     .config(function () {
         //  $routeProvider
         //    .when('/', {
@@ -34,12 +32,6 @@ angular
         link: '3',
         size: '2'
     }];
-
-    //$rootScope.data = {
-    //    name: '1',
-    //    link: '2',
-    //    size: '3'
-    //};
 
     $rootScope.config = {
         domain: 'http://7xixj1.com1.z0.glb.clouddn.com/',
