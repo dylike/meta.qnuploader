@@ -22,6 +22,10 @@ controller('metaMultipleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $s
         }
     };
 
+    $scope.clear = function () {
+        $scope.message = $sce.trustAsHtml('');
+    };
+
     //显示失败信息
     $scope.error = function (msg) {
         $scope.message = $sce.trustAsHtml('<span style="color:red">' + msg + '</span>');
@@ -43,6 +47,7 @@ controller('metaMultipleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $s
 
     //开始动画
     $scope.start = function () {
+        $scope.clear();
         $scope.uploading = true;
         $scope.$apply();
     };
@@ -52,6 +57,7 @@ controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce
     $scope.uploading = false;
 
     $scope.start = function () {
+        $scope.clear();
         $scope.uploading = true;
         $scope.$apply();
     };
@@ -60,6 +66,11 @@ controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce
         $scope.uploading = false;
         $scope.$apply();
     };
+
+    $scope.clear = function () {
+        $scope.message = $sce.trustAsHtml('');
+    };
+
     //显示失败信息
     $scope.error = function (msg) {
         $scope.stop();
