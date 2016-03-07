@@ -1,7 +1,9 @@
 <div class="meta-single-qnuploader">
-    <a ng-href="{{uploaderData.link}}" target="_blank" class="btn btn-default" ng-show="uploaderData">下载链接</a>
     <button id="pickfiles" class="btn btn-success" ng-hide="uploading"><span ng-bind="uploaderData ? '重新上传' : '点击上传'">点击上传</span>
     </button>
+
+    <a ng-href="{{uploaderData.link}}" target="_blank" class="btn btn-default" ng-show="uploaderData">下载链接</a>
+
     <div class="loading glyphicon glyphicon-repeat" ng-show="uploading"></div>
 
     <span class="" ng-bind-html="message"></span>

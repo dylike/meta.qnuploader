@@ -375,7 +375,6 @@ directive("metaSingleQnuploader", function () {
                             res.type = file.type;
                             console.log(res);
                             scope.uploaderData = (res);
-                            scope.$apply();
                             //触发上传成功的回调
                             scope.success('上传成功');
                         },
