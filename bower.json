@@ -1,6 +1,6 @@
 {
   "name": "meta-qnuploader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {},
   "main": [
     "dist/scripts/meta.qnuploader.min.js",
