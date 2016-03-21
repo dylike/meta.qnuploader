@@ -17,7 +17,7 @@ controller('metaMultipleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $s
     //删除其中的元素
     $scope.delete = function (index) {
         if (confirm('是否确认删除?')) {
-            $scope.uploaderDatas.splice(index, 1);
+            $scope.uploaderData.splice(index, 1);
             $scope.success('删除成功');
         }
     };
@@ -83,15 +83,16 @@ controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce
         $scope.message = $sce.trustAsHtml('<span style="color:green">' + msg + '</span>');
         $scope.stop();
     };
-}]).
-directive("metaMultipleQnuploader", function () {
+}]).directive("metaMultipleQnuploader", function () {
     return {
         restrict: 'AE',
         scope: {
             'uploaderConfig': '=',
-            'uploaderDatas': '='
+            'uploaderData': '=',
         },
-        templateUrl: 'views/widget/meta.multiple.qnuploader.html',
+        templateUrl: function (element, attrs) {
+            return attrs.templateUrl || 'views/widget/meta.multiple.qnuploader.html';
+        },
         controller: 'metaMultipleQnuploaderCtrl',
         link: function (scope, element) {
             if (Qiniu === undefined) {
@@ -126,6 +127,12 @@ directive("metaMultipleQnuploader", function () {
 
                 var _buttonId = _button.attr('id');
                 var _containerId = _container.attr('id');
+
+                scope.$watch('uploaderData', function () {
+                    if (!scope.uploaderData) {
+                        scope.clear();
+                    }
+                }, true);
 
                 Qiniu.uploader({
                     runtimes: 'html5,flash,html4',    //上传模式,依次退化
@@ -211,7 +218,7 @@ directive("metaMultipleQnuploader", function () {
                             res.size = file.size;
                             res.type = file.type;
                             console.log(res);
-                            scope.uploaderDatas.push(res);
+                            scope.uploaderData.push(res);
                             //触发上传成功的回调
                             scope.success(file.name + '上传成功!');
                         },
@@ -263,7 +270,9 @@ directive("metaSingleQnuploader", function () {
             'uploaderConfig': '=',
             'uploaderData': '='
         },
-        templateUrl: 'views/widget/meta.single.qnuploader.html',
+        templateUrl: function (element, attrs) {
+            return attrs.templateUrl || 'views/widget/meta.single.qnuploader.html';
+        },
         controller: 'metaSingleQnuploaderCtrl',
         link: function (scope, element) {
             if (Qiniu === undefined) {
@@ -298,6 +307,12 @@ directive("metaSingleQnuploader", function () {
 
                 var _buttonId = _button.attr('id');
                 var _containerId = _container.attr('id');
+
+                scope.$watch('uploaderData', function () {
+                    if (!scope.uploaderData) {
+                        scope.clear();
+                    }
+                }, true);
 
                 Qiniu.uploader({
                     runtimes: 'html5,flash,html4',    //上传模式,依次退化
