@@ -271,6 +271,7 @@ directive("metaSingleQnuploader", function () {
             'uploaderData': '='
         },
         templateUrl: function (element, attrs) {
+            console.log(attrs);
             return attrs.templateUrl || 'views/widget/meta.single.qnuploader.html';
         },
         controller: 'metaSingleQnuploaderCtrl',
@@ -335,6 +336,9 @@ directive("metaSingleQnuploader", function () {
                     drop_element: _containerId,        //拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
                     chunk_size: '4mb',                //分块上传时，每片的体积
                     auto_start: true,                 //选择文件后自动上传，若关闭需要自己绑定事件触发上传
+                    filters: {
+                        'mime_types': config.mimeTypes
+                    },
                     init: {
                         'FilesAdded': function (up, files) {
                             plupload.each(files, function (file) {

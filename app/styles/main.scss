@@ -15,9 +15,7 @@
             margin: 5px 0 5px 0;
             .loading-wrapper {
                 display: none;
-                position: absolute;
-                right: 0;
-                top: 0;
+                float: left;
                 padding: 5px;
             }
 
@@ -28,6 +26,7 @@
             .uploader-message-wrapper {
                 float: left;
                 margin: 0 20px;
+                line-height: 32px;
             }
         }
         .meta-qnuploader-body {

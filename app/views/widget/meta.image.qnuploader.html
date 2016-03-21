@@ -1,0 +1,13 @@
+<div class="meta-single-qnuploader">
+    <button id="pickfiles" type="button" class="btn btn-default" ng-disabled="uploading"><span
+        ng-bind="uploaderData ? '重新上传' : '点击上传'">点击上传</span>
+    </button>
+
+    <div class="loading glyphicon glyphicon-repeat" ng-show="uploading"></div>
+
+    <div class="" ng-bind-html="message"></div>
+
+    <div class="">
+        <small>单个图片大小不能大于<span ng-bind="uploaderConfig.maxSize"></span></small>
+    </div>
+</div>
