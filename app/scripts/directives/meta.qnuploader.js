@@ -129,7 +129,8 @@ controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce
                 var _containerId = _container.attr('id');
 
                 scope.$watch('uploaderData', function () {
-                    if (!scope.uploaderData) {
+                    if (!scope.uploaderData || Array.isArray(scope.uploaderData)) {
+                        scope.uploaderData = [];
                         scope.clear();
                     }
                 }, true);
@@ -213,12 +214,12 @@ controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce
                             var domain = up.getOption('domain');
                             var res = JSON.parse(info);
                             var sourceLink = domain + res.key; //获取上传成功后的文件的Url
-                            res.link = sourceLink;
-                            res.name = file.name;
-                            res.size = file.size;
-                            res.type = file.type;
-                            console.log(res);
-                            scope.uploaderData.push(res);
+                            var result = {};
+                            result.link = sourceLink;
+                            result.name = file.name;
+                            result.size = file.size;
+                            result.type = file.type;
+                            scope.uploaderData.push(result);
                             //触发上传成功的回调
                             scope.success(file.name + '上传成功!');
                         },
@@ -397,12 +398,13 @@ directive("metaSingleQnuploader", function () {
                             var domain = up.getOption('domain');
                             var res = JSON.parse(info);
                             var sourceLink = domain + res.key; //获取上传成功后的文件的Url
-                            console.log(file);
-                            res.link = sourceLink;
-                            res.name = file.name;
-                            res.size = file.size;
-                            res.type = file.type;
-                            scope.uploaderData = (res);
+                            var result = {};
+
+                            result.link = sourceLink;
+                            result.name = file.name;
+                            result.size = file.size;
+                            result.type = file.type;
+                            scope.uploaderData = (result);
                             //触发上传成功的回调
                             scope.success('上传成功');
                         },
