@@ -129,7 +129,7 @@ controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce
                 var _containerId = _container.attr('id');
 
                 scope.$watch('uploaderData', function () {
-                    if (!scope.uploaderData || Array.isArray(scope.uploaderData)) {
+                    if (!scope.uploaderData || !Array.isArray(scope.uploaderData)) {
                         scope.uploaderData = [];
                         scope.clear();
                     }

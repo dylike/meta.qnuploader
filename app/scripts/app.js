@@ -43,7 +43,7 @@ angular
 
     $rootScope.config = {
         domain: 'http://7xixj1.com1.z0.glb.clouddn.com/',
-        uptokenUrl: 'http://test.metalab.cn:3000/upload/token?bucket=metalab-test',
+        uptokenUrl: 'http://121.40.199.229:3000/upload/token?bucket=metalab-test',
         //uptokenUrl: 'http://api.metalab.cn:3003/upload/token',
         maxSize: '1M',
         mimeTypes: [
