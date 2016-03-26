@@ -66,6 +66,12 @@ controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce
         $scope.uploading = false;
         $scope.$apply();
     };
+    $scope.delete = function () {
+        if (confirm('是否确认删除?')) {
+            delete $scope.uploaderData;
+            $scope.success('删除成功');
+        }
+    };
 
     $scope.clear = function () {
         $scope.message = $sce.trustAsHtml('');

@@ -4,7 +4,10 @@
     </button>
 
     <a ng-href="{{uploaderData.link + '?download/' + uploaderData.name}}" target="_blank" class="btn btn-default"
-       ng-show="uploaderData">下载附件</a>
+       ng-show="uploaderData">下载文件</a>
+
+    <button type="button" class="btn btn-default" ng-click="delete()" ng-show="uploaderData">删除文件
+    </button>
 
     <div class="loading glyphicon glyphicon-repeat" ng-show="uploading"></div>
 
