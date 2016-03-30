@@ -141,7 +141,9 @@ controller('metaSingleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $sce
                     }
                 }, true);
 
-                Qiniu.uploader({
+                var QiniuInstance = new QiniuJsSDK();
+
+                QiniuInstance.uploader({
                     runtimes: 'html5,flash,html4',    //上传模式,依次退化
                     browse_button: _buttonId,       //上传选择的点选按钮，**必需**
                     //uptoken_url: '/token',
@@ -322,7 +324,9 @@ directive("metaSingleQnuploader", function () {
                     }
                 }, true);
 
-                Qiniu.uploader({
+                var QiniuInstance = new QiniuJsSDK();
+
+                QiniuInstance.uploader({
                     runtimes: 'html5,flash,html4',    //上传模式,依次退化
                     browse_button: _buttonId,       //上传选择的点选按钮，**必需**
                     //uptoken_url: '/token',
@@ -343,6 +347,7 @@ directive("metaSingleQnuploader", function () {
                     drop_element: _containerId,        //拖曳上传区域元素的ID，拖曳文件或文件夹后可触发上传
                     chunk_size: '4mb',                //分块上传时，每片的体积
                     auto_start: true,                 //选择文件后自动上传，若关闭需要自己绑定事件触发上传
+                    multi_selection: false,
                     filters: {
                         'mime_types': config.mimeTypes
                     },
