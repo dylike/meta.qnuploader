@@ -50,4 +50,8 @@ angular
         ]
     };
 
+    $rootScope.click = function() {
+        console.log($rootScope);
+    };
+
 }]);

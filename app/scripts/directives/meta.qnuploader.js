@@ -18,9 +18,6 @@ controller('metaMultipleQnuploaderCtrl', ['$scope', '$sce', function ($scope, $s
     $scope.delete = function (index) {
         if (confirm('是否确认删除?')) {
             $scope.uploaderData.splice(index, 1);
-            if ($scope.uploaderData.length === 0) {
-                $scope.uploaderData = null;
-            }
             $scope.success('删除成功');
         }
     };
